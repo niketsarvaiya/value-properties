@@ -6,7 +6,7 @@ const MOCK_ENQUIRY = {
   id: "enq-1",
   propertyName: "Lodha Malabar — Sea-Facing Residence",
   propertySlug: "lodha-malabar-walkeshwar",
-  status: "VISIT_SCHEDULED" as const,
+  status: "VISIT_SCHEDULED" as string,
   visitDate: "2026-06-10",
   visitTime: "10:00 AM – 12:00 PM",
   message: "Looking for a sea-facing 4 BHK. Vastu preferred.",

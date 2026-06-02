@@ -44,8 +44,8 @@ export default function AdminPropertiesPage() {
                 </td>
                 <td className="px-4 py-4">
                   <div className="flex gap-2">
-                    {p.showOnHomepage ? <Eye size={13} className="text-[#C9A96E]" title="On Homepage" /> : <EyeOff size={13} className="text-gray-300" title="Hidden from Homepage" />}
-                    {p.hotProperty && <Flame size={13} className="text-orange-500" title="Hot Property" />}
+                    {p.showOnHomepage ? <Eye size={13} className="text-[#C9A96E]" /> : <EyeOff size={13} className="text-gray-300" />}
+                    {p.hotProperty && <Flame size={13} className="text-orange-500" />}
                   </div>
                 </td>
                 <td className="px-4 py-4">
