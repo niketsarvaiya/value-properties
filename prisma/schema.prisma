@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String
+  phone     String?
+  password  String
+  role      Role      @default(CLIENT)
+  createdAt DateTime  @default(now())
+  enquiries Enquiry[]
+}
+
+model Enquiry {
+  id           String        @id @default(cuid())
+  userId       String
+  user         User          @relation(fields: [userId], references: [id])
+  propertySlug String
+  propertyName String
+  status       EnquiryStatus @default(NEW)
+  visitDate    DateTime?
+  visitTime    String?
+  message      String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  message   String?
+  source    String   @default("website")
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  CLIENT
+  ADMIN
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  VISIT_SCHEDULED
+  COMPLETED
+  CLOSED
+}
