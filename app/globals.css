@@ -1,6 +1,9 @@
 @import "tailwindcss";
+@source "../app/**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+@source "../lib/**/*.{ts,tsx}";
 
-@theme inline {
+@theme {
   --color-navy: #0F1C2E;
   --color-champagne: #C9A96E;
   --color-ivory: #F8F5F0;
